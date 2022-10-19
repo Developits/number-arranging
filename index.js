@@ -1,9 +1,10 @@
 const arrangeBtn = document.getElementById("arrange");
 const submitBtn = document.getElementById("submit");
-let textarea = document.getElementById("numbers");
+const form = document.getElementById("form");
 
-arrangeBtn.addEventListener("click", function () {
-  let massage = textarea.value;
+arrangeBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  let massage = form.numbers.value;
   let arranged = massage.split(",").join("\r\n");
   document.getElementById("numbers").value = arranged;
   if (massage) {
